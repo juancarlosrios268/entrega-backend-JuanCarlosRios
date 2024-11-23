@@ -1,0 +1,24 @@
+[
+    {
+        "id": "710958f9-f5f0-47e7-a6fb-44c7b254b6c1",
+        "title": "Maquina tatuar",
+        "description": "Maquina de tatuar profesional",
+        "price": 2000000,
+        "thumbnail": [],
+        "code": "2aa",
+        "stock": 10,
+        "status": true,
+        "category": "maquinas"
+    },
+    {
+        "id": "69914dcd-0a72-402f-b846-a83c958fab11",
+        "title": "cartuchos 3rl",
+        "description": "cartuchos para tatuar",
+        "price": 2000000,
+        "thumbnail": [],
+        "code": "3aa",
+        "stock": 10,
+        "status": true,
+        "category": "cartuchos"
+    }
+]
