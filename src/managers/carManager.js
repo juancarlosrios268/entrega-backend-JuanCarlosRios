@@ -7,7 +7,6 @@ export class CartManager {
     this.path = "./src/managers/data/carts.json";
   }
 
-  
   async getCarts() {
     const file = await fs.promises.readFile(this.path, "utf-8");
     const fileParse = JSON.parse(file);
@@ -17,7 +16,6 @@ export class CartManager {
     return this.carts;
   }
 
-  
 
   async createCart() {
     await this.getCarts();
@@ -33,7 +31,6 @@ export class CartManager {
 
     return newCart;
   }
-
   
   async getCartById(cid) {
     await this.getCarts();
@@ -44,7 +41,6 @@ export class CartManager {
 
     return cart;
   }
-
   async addProductToCart(cid, pid) {
     
     const cart = await this.getCartById(cid);
