@@ -35,6 +35,18 @@ const httpServer = app.listen(PORT, () => {
 
 const io = new Server(httpServer);
 
+let messages = [];
 io.on("connection", (socket) =>{
     console.log(`Nuevo cliente conectado con el id ${socket.id}`);
+
+    // escuchamos el nuevo usuario
+    socket.on("newUser", (data) =>{
+        console.log(data);
+    })
+    
+    // escuchamos el evento mensaje
+    socket.on ("message", (data) =>{
+      messages.push(data);  
+      io.emit("messageLogs", messages);
+    })
 })
