@@ -1,0 +1,38 @@
+[
+    {
+        "user": "a",
+        "message": "a"
+    },
+    {
+        "user": "a",
+        "message": "b"
+    },
+    {
+        "user": "a",
+        "message": "c"
+    },
+    {
+        "user": "j",
+        "message": "g"
+    },
+    {
+        "user": "juan",
+        "message": "hola"
+    },
+    {
+        "user": "pedro",
+        "message": "hola"
+    },
+    {
+        "user": "pedro",
+        "message": "como estas"
+    },
+    {
+        "user": "juan",
+        "message": "muy bien"
+    },
+    {
+        "user": "juan",
+        "message": "y tu?"
+    }
+]

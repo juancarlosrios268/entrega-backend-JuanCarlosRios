@@ -3,6 +3,7 @@ import productsRoutes from "./router/products.routes.js";
 import cartsRoutes from "./router/carts.routes.js"
 import { engine } from 'express-handlebars'
 import { Server } from "socket.io";
+import fs from "fs";
 
 
 
@@ -36,7 +37,7 @@ const httpServer = app.listen(PORT, () => {
 const io = new Server(httpServer);
 
 let messages = [];
-io.on("connection", (socket) =>{
+io.on("connection",  (socket) =>{
     console.log(`Nuevo cliente conectado con el id ${socket.id}`);
 
     // escuchamos el nuevo usuario
@@ -46,7 +47,16 @@ io.on("connection", (socket) =>{
     
     // escuchamos el evento mensaje
     socket.on ("message", (data) =>{
+      setMessage(data)
       messages.push(data);  
       io.emit("messageLogs", messages);
     })
 })
+
+async function setMessage(message) {
+  const path = "./src/managers/data/messages.json";
+  const file = await fs.promises.readFile(path, "utf-8");
+  const chat = JSON.parse(file);
+  chat.push(message)
+  await fs.promises.writeFile(path, JSON.stringify(chat));
+} 
