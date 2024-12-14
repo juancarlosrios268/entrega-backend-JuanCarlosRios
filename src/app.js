@@ -42,7 +42,7 @@ io.on("connection",  (socket) =>{
 
     // escuchamos el nuevo usuario
     socket.on("newUser", (data) =>{
-        console.log(data);
+        socket.broadcast.emit("newUser", data);
     })
     
     // escuchamos el evento mensaje

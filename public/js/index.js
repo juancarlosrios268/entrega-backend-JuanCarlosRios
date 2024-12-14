@@ -54,4 +54,14 @@ chatBox.addEventListener("keyup", (event) => {
   })
 
 
+  // escuchamos cuando se conecta un nuevo usuario 
+  socket.on("newUser", (data) =>{
+    Swal.fire({
+      text: `Ha iniciado sesión ${data}`,
+      toast: true,
+      position: "top-right",
+      timer: 2000
+    })
+  })
+
   
