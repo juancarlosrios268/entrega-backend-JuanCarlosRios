@@ -4,11 +4,11 @@ import cartsRoutes from "./router/carts.routes.js"
 import { engine } from 'express-handlebars'
 import { Server } from "socket.io";
 import fs from "fs";
+import { connectMongoDB } from "./config/mongoDb.config.js"
 
 
-
-const PORT = 8080
-
+connectMongoDB();
+const PORT = 8080;
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true }));
